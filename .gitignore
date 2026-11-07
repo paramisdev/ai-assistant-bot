@@ -1,0 +1,15 @@
+.env
+AGENTS.md
+opencode.json
+openclaw.json
+.venv
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+dist/
+build/
+*.egg-info/
+.idea/
+.vscode/
