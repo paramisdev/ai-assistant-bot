@@ -10,28 +10,22 @@ from bot.services.prompts import ASSISTANT_SYSTEM_PROMPT, SUMMARIZE_SYSTEM_PROMP
 from bot.services.text import split_text
 
 
-class LLMError(Exception):
-    pass
+class LLMError(Exception): ...
 
 
-class LLMConnectionError(LLMError):
-    pass
+class LLMConnectionError(LLMError): ...
 
 
-class LLMRateLimitError(LLMError):
-    pass
+class LLMRateLimitError(LLMError): ...
 
 
-class LLMTokenLimitError(LLMError):
-    pass
+class LLMTokenLimitError(LLMError): ...
 
 
-class LLMAuthError(LLMError):
-    pass
+class LLMAuthError(LLMError): ...
 
 
-class LLMResponseError(LLMError):
-    pass
+class LLMResponseError(LLMError): ...
 
 
 class LLMClient:
