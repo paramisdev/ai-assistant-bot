@@ -11,32 +11,30 @@ from bot.services.text import split_text
 
 
 class LLMError(Exception):
-    """Base class for LLM client errors."""
+    pass
 
 
 class LLMConnectionError(LLMError):
-    """The LLM API is unavailable or the request timed out."""
+    pass
 
 
 class LLMRateLimitError(LLMError):
-    """The LLM API rejected the request because of a rate limit."""
+    pass
 
 
 class LLMTokenLimitError(LLMError):
-    """The text is too long for the model context window."""
+    pass
 
 
 class LLMAuthError(LLMError):
-    """The API key is invalid or has no access."""
+    pass
 
 
 class LLMResponseError(LLMError):
-    """The LLM API returned an unexpected response."""
+    pass
 
 
 class LLMClient:
-    """Async client for OpenAI-compatible chat completion APIs."""
-
     def __init__(
         self,
         settings: Settings,
@@ -69,7 +67,6 @@ class LLMClient:
         *,
         system_prompt: str | None = None,
     ) -> str:
-        """Send a prompt to the LLM and return the generated text."""
         prompt = prompt.strip()
         if not prompt:
             raise ValueError("Prompt must not be empty")
@@ -123,7 +120,6 @@ class LLMClient:
         return content.strip()
 
     async def ask(self, text: str) -> str:
-        """Answer a regular user message."""
         return await self.complete(text, system_prompt=ASSISTANT_SYSTEM_PROMPT)
 
     async def summarize(self, text: str) -> str:
